@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /wp-admin/
+
+#staging
+Disallow: /staging/
+Disallow: /gyansabha-clone/
+
+Sitemap: https://gyansabha.in/sitemap.xml

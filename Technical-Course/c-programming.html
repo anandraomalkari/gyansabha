@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <title> C Programming tutorials and Question Paper PDF </title>
+    <meta name="title" content="C Programming tutorials and Question Paper PDF">
+    <meta name="description" content="C Programming Language Tutorial and what is c programming, C language with programming examples for beginners."/>
+    <meta name="keywords" content="c, language,what is c programming, tutorial, programming, example, beginners, gyansabha"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="IMG\icon.png" type="image/x-icon" />
+    <base href="https://gyansabha.in/">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919281978138727"
+     crossorigin="anonymous"></script>
+<style>
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: blue; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+}
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+::selection{
+  background: #4070f4;
+  color: #fff;
+}
+body{
+    background: #43464b;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: relative;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #4070f4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+.logo img{
+    height: 60px;
+    font-size: 40px;
+    line-height: 60px;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav{
+    float: right;
+}
+.clearfix{
+    clear: both;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #262626;
+}
+nav ul li a.active,
+nav ul li a:hover{
+    color: #fff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+@media (max-width:1200px){
+    header{
+        margin: 10px;
+    }
+    header img{
+        width:250px;
+        height: 50px;
+    }
+}
+@media (max-width:768px){
+    .menu-toggle{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+    }
+    .menu-toggle:before{
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    nav{
+        display: none;
+    }
+    .menu-toggle.active:before{
+        content: '\f00d';
+    }
+    nav.active{
+        display: block;
+        width: 100%;
+    }
+    nav.active ul{
+        display: block;
+    }
+    nav.active ul li a{
+        margin: 0;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo"><img src="\IMG\Gyansabhalogo.png" alt=""></a>
+    <div class="menu-toggle"></div>
+    <nav>
+        <ul>
+        <li><a href="index.html" title="Home" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+        <li><a href="about-Gyansabha\FAQ.html" title="FAQ"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ </a></li>
+        <li><a href="about-Gyansabha\about.html" title="About"><i class="fa fa-id-card-o" aria-hidden="true"></i> About Us </a></li>
+        <li><a href="about-Gyansabha\contactus.php" title="Contact Us"><i class="fa fa-commenting-o" aria-hidden="true"></i> Contact Us </a></li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+</header>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('.menu-toggle').click(function(){
+            $('.menu-toggle').toggleClass('active')
+            $('nav').toggleClass('active')
+        })
+    })
+</script>
+
+<style>
+.titles{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px;
+    padding: 5px 20px;
+    background: #4070f4;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
+    width: 250px;
+    text-align: center;
+    font-size: 16px;
+}
+.container{
+    letter-spacing: 1px;
+    position: relative;
+    width: 1350px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    border: 2px solid #4070f4;
+}
+.link{
+    display: inline-block;
+    padding: 10px;
+    background-color: #4070f4;
+    color: white;
+    font-weight: 700 0.75rem/0;
+    transition: all 0.2s;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.text-container, .img-fluid{
+    margin: 10px;
+    padding: 10px;
+}
+.img-fluid img{
+    margin-top: 60px;
+    border-radius: 10px;
+}
+.text-container h3{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 900;
+}
+.text-container p{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 200;
+}
+.text-container ol li{
+    padding: 4px;
+}
+.text-container a{
+    text-decoration: none;
+    color: #fff;
+}
+.basic-3{
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+.basic-3 img{
+    margin-top: 60px;
+    margin-bottom: 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid #4070f4;
+}
+.basic-3 p{
+    font-weight: 500;
+}
+
+@media (max-width:768px){
+    .container{
+        width: 95%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .caontainer{
+        width: 100%;
+    }
+}
+</style>
+<div class="basic-3">
+    <div class="second">
+        <div class="container">
+            <span class="titles"> C Programming </span>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h3> What will I learn? </h3>
+                        <ol>
+                            <li>Core skills needed to write a C program.</li>
+                            <li>How to smartly handle repetitive tasks using Programming.</li>
+                            <li>Build your own basic calculator.</li>
+                        </ol>
+                        <h3>My Target</h3>
+                        <ol>
+                            <li>This course is suitable for an absolute beginner who wants to learn programming from scratch.</li>
+                            <li>If you want to lay a Solid foundation for your long and fruitful programming career, C programming is the best choice to start with.</li>
+                        </ol>
+                        <h3>Benefits</h3>
+                        <ol>
+                            <li>It also supports functions of high-level programming languages, such as scripting for software applications etc.</li>
+                            <li>C is highly portable and is used for scripting system applications which form a major part of Windows, UNIX, and Linux operating system.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="IMG/c-image.png" alt="C Programming">
+                    <p>
+                        Basic knowledge prior to Computer Architecture and Basic functional of a computer system.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.start-learning{
+    margin: auto;
+    letter-spacing: 1px;
+    position: relative;
+    width: 1050px;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-learning .start{
+    margin-top: 60px;
+    padding: 10px;
+    width: 100%;
+}
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+}
+.tab button {
+  display: block;
+  background-color: #4070f4;
+  color: #fff;
+  padding: 10px 6px;
+  margin: 10px;
+  width: 90%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.tab button.active {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+.contents {
+    float: left;
+    padding: 0px 12px;
+    width: 70%;
+    border-left: none;
+}
+.contents h3{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    color: #4070f4;
+}
+.contents ol a li{
+    list-style: none;
+    border: 1px solid rgb(202, 199, 199);
+    padding: 10px;
+    margin: 2px;
+    width: 100%;
+}
+.contents a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+.contents ol li:hover{
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+    .start-learning{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .contents{
+        height: 433px;
+        font-size: 14px;
+    }
+    .tab button{
+        font-size: 14px;
+    }
+}
+</style>
+
+
+<div class="start-learning">
+    <span class="titles">Topics</span>
+    <div class="start">
+    <div class="tab">
+        <button class="links" onclick="openChapter(event, 'Introduction')" id="defaultOpen">Introduction</button>
+        <button class="links" onclick="openChapter(event, 'Control and Looping')">Control and Looping</button>
+        <button class="links" onclick="openChapter(event, 'Funcation')">Funcation</button>
+        <button class="links" onclick="openChapter(event, 'Array')">Array</button>
+        <button class="links" onclick="openChapter(event, 'String')">String</button>
+        <button class="links" onclick="openChapter(event, 'Structure and Union')">Structure and Union</button>
+        <button class="links" onclick="openChapter(event, 'Pointer')">Pointer</button>
+        <button class="links" onclick="openChapter(event, 'read')">Read Notes</button>
+        <button class="links" onclick="openChapter(event, 'Codes')">Programming Codes</button>
+        <button class="links" onclick="openChapter(event, 'Download')">Extra Learning</button>
+      </div>
+
+    <div id="Introduction" class="contents">
+        <h3>Introduction</h3>
+        <ol>
+            <a href="c-programming/what-is-c.html"><li> What is C </li></a>
+            <a href="c-programming/c-history.html"><li> C History </li></a>
+            <a href="c-programming/c-keywords-identifier.html"><li> C Keywords and Identifiers </li></a>
+            <a href="c-programming/c-variables-constants.html"><li> C Variable and Constants </li></a>
+            <a href="c-programming/c-data-types.html"><li> C Data Type </li></a>
+            <a href="c-programming/c-input-output.html"><li> C Input/Output </li></a>
+            <a href="c-programming/c-operators.html"><li> C Operators </li></a>
+            <a href="quiz/c-programming-quiz/basic.html"><li> Introduction Quiz </li></a>
+        </ol>
+      </div>
+
+      <div id="Control and Looping" class="contents">
+        <h3>Control and Looping</h3>
+        <ol>
+            <a href="c-programming/c-if-else-statement.html"><li> C if-else Statement </li></a>
+            <a href="c-programming/c-loops.html"><li> C Loops </li></a>
+            <a href="c-programming/c-break-and-continue.html"><li> C break and continue </li></a>
+            <a href="c-programming/c-switch-case.html"><li> C switch case </li></a>
+            <a href="c-programming/c-goto.html"><li> C goto </li></a>
+        </ol>
+      </div>
+
+      <div id="Funcation" class="contents">
+        <h3>Funcation</h3>
+        <ol>
+            <a href="c-programming/c-function-intro.html"><li> C Function </li></a>
+            <a href="c-programming/c-user-define-function.html"><li> C User-defined Function </li></a>
+            <a href="c-programming/c-function-types.html"><li> C Function Type </li></a>
+            <a href="c-programming/c-recursion.html"><li> C Recursion </li></a>
+            <a href="c-programming/c-storage-classes.html"><li> C Storage Class </li></a>
+        </ol>
+      </div>
+
+      <div id="Array" class="contents">
+        <h3>Array</h3>
+        <ol>
+            <a href="c-programming/c-array-introduction.html"><li> C Array Introduction </li></a>
+            <a href="c-programming/c-one-two-dimensional-array.html"><li> C One & Two dimensional Array </li></a>
+            <a href="c-programming/c-array-and-function.html"><li> C Arrya and Function </li></a>
+        </ol>
+      </div>
+
+      <div id="String" class="contents">
+        <h3>String</h3>
+        <ol>
+            <a href="c-programming/c-string-introduction.html"><li> C string Introduction </li></a>
+            <a href="c-programming/c-gets-and-puts.html"><li> C get and puts </li></a>
+            <a href="c-programming/c-string-function.html"><li> C string Function </li></a>
+        </ol>
+      </div>
+
+      <div id="Structure and Union" class="contents">
+        <h3>Structure and Union</h3>
+        <ol>
+            <a href="c-programming/c-structure-intro.html"><li> C Structure Introduction </li></a>
+            <a href="c-programming/c-nested-structure.html"><li> C Nested Structure </li></a>
+            <a href="c-programming/c-array-and-structure.html"><li> C Array of structure </li></a>
+            <a href="c-programming/c-union.html"><li> C Union </li></a>
+        </ol>
+      </div>
+
+      <div id="Pointer" class="contents">
+        <h3>Pointer</h3>
+        <ol>
+            <a href="c-programming/c-pointer-introduction.html"><li> C Pointer Introduction </li></a>
+            <a href="c-programming/c-pointer-and-array.html"><li> C Pointer and Array </li></a>
+            <a href="c-programming/c-pointer-and-function.html"><li> C Pointer and Function </li></a>
+            <a href="c-programming/c-memory-allocation.html"><li> C Memory Allocation </li></a>
+            <a href="c-programming/c-pointer-arithmetic.html"><li> C Pointer Arithmetic </li></a>
+        </ol>
+      </div>
+      
+      <div id="read" class="contents">
+        <h3>Read Notes</h3>
+        <iframe src="Technical-Course/subject-notes/notes-read/c-introduction.pdf#toolbar=0" frameborder="0" width="100%" height="500px"></iframe>
+      </div>
+
+      <div id="Codes" class="contents">
+        <h3>Programming Codes</h3>
+        <ol>
+            <a href="https://drive.google.com/file/d/1RVdiwQLW6ssZJQczdFuJxK3iBl3i5Pay/view?usp=sharing" download target="_blank"><li> Basic </li></a>
+            <a href="https://drive.google.com/file/d/1Hwgbuf7mxD57giWcv01USthig9fHm2ne/view?usp=sharing" download target="_blank"><li>Array</li></a>
+            <a href="https://drive.google.com/file/d/19REiA0dBDihaLFiWaGubY_mRKrDQXn4h/view?usp=sharing" download target="_blank"><li>Conversions</li></a>
+            <a href="https://drive.google.com/file/d/1GmWoBIwPbcbXvHqbe8WzKVpHpOkSQZqC/view?usp=sharing" download target="_blank"><li>Matrics</li></a>
+            <a href="https://drive.google.com/file/d/1NbO0mcLZbjtbzrC_cMaVDNQZO8yMZTZg/view?usp=sharing" download target="_blank"><li>Numbers</li></a>
+            <a href="https://drive.google.com/file/d/1JeP72j2aE6eDDdJWYM4UrTTn_i3qXaNa/view?usp=sharing" download target="_blank"><li>Pointer</li></a>
+            <a href="https://drive.google.com/file/d/1_zlyrSSJPZ7f3VxD4yyScLG6ano1a1xX/view?usp=sharing" download target="_blank"><li>Recursion</li></a>
+            <a href="https://drive.google.com/file/d/1CDl8lR7WyGOKfIEcszfU6roqqL8acMOO/view?usp=sharing" download target="_blank"><li>sort</li></a>
+            <a href="https://drive.google.com/file/d/1K-Tl_44IO7I-oplQrSnep6gXA_G_ESjl/view?usp=sharing" download target="_blank"><li>strings</li></a>
+            <a href="https://drive.google.com/file/d/12TJc5KYtbpGMLwBT9iPtrdkCwnfhY6zH/view?usp=sharing" download target="_blank"><li>Structure</li></a>
+        </ol>
+      </div>
+    
+      <div id="Download" class="contents">
+        <h3>Extra Learning</h3>
+        <ol>
+            <a href="Technical-Course/download/c-programming-notes-download.php" target="_blank"><li> Notes  </li></a>
+            <a href="https://bit.ly/3ihVA6i" download target="_blank"><li> Question Paper </li></a>
+            <a href="Code/C-index.html" target="_blank"><li> Codes </li></a>
+            <a href="books/c-programming-books.html" target="_blank"><li> C Programming Books</li></a>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+        function openChapter(evt, chapterName) {
+          var i, contents, links;
+          contents = document.getElementsByClassName("contents");
+          for (i = 0; i < contents.length; i++) {
+            contents[i].style.display = "none";
+          }
+          links = document.getElementsByClassName("links");
+          for (i = 0; i < links.length; i++) {
+            links[i].className = links[i].className.replace(" active", "");
+          }
+          document.getElementById(chapterName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+</div>
+
+<br><br>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+footer{
+    position: absolute;
+    width: 100%;
+    background: #111;
+    color: #fff;
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+.box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+}
+.box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #4070f4;
+    top: -10px;
+}
+.left .content p{
+    text-align: justify;
+}
+.center .content .fas{
+    font-size: 2.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 35px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.center .content .fas:hover{
+    background: #4070f4;
+}
+.center .content .text{
+    font-size: 1.0625rem;
+    padding-left: 10px;
+}
+.center .content .email{
+    margin: 15px 0;
+}
+.center .content .social{
+    margin: 20px 0 0 0;
+} 
+.center .content .social a{
+    padding: 0 2px;
+}
+.center .content .social a i{
+    height: 40px;
+    width: 45px;
+    background: #1a1a1a;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.center .content .social a i:hover{
+    background: #4070f4;
+}
+.right{
+    height: 45px;
+    width: 25px;
+    line-height: 30px;
+}
+.right .content .projects span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .projects span a:hover{
+    color: #4070f4;
+}
+.right .content .code span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .code span a:hover{
+    color: #4070f4;
+}
+.right .content .blog span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .blog span a:hover{
+    color: #4070f4;
+}
+.righttwo{
+    height: 45px;
+    width: 25px;
+    line-height: 30px;
+}
+.righttwo .content .about span a{
+    text-decoration: none;
+    color: #fff;
+}
+.righttwo .content .about span a:hover{
+    color: #4070f4;
+}
+.righttwo .content .privcy span a{
+    text-decoration: none;
+    color: #fff;
+}
+.righttwo .content .privcy span a:hover{
+    color: #4070f4;
+}
+@media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+    .right{
+      width: 100%;
+    }
+    .righttwo{
+      width: 100%;
+    }
+}
+.footer-bottom{
+    padding: 10px;
+    background: #3d545f;
+    color: #fff;
+}
+</style>
+<footer>
+    <div class="main-content">
+        <div class="left box">
+            <h2>About us</h2>
+            <div class="content">
+                <p>Gyansabha is a place where students, Teachers and faculty members can get all the study related Things like Notes, Question Papers and Projects materials, etc. We believe that a good learner is a better explorer.</p>
+            </div>
+        </div>
+        <div class="right box">
+            <h2>Useful Links</h2>
+            <div class="content">
+                <div class="blog">
+                    <span><a href="Blog/Blog-index.html">Blog</a></span>
+                </div>
+                <div class="projects">
+                    <span><a href="Projects/Gyansabha-Projects.html">Projects</a></span>
+                </div>
+                <div class="code">
+                    <span><a href="Code/Code-index.html">Creative Code</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="righttwo box">
+            <h2>Website</h2>
+            <div class="content">
+                <div class="about">
+                    <span><a href="about-Gyansabha\about.html">About Us</a></span>
+                </div>
+                <div class="about">
+                    <span><a href="mailto:study@gyansabha.in"> Contact Us </a></span>
+                </div>
+                <div class="about">
+                    <span><a href="sitemap.xml">Sitemap</a></span>
+                </div>
+                <div class="privcy">
+                    <span><a href="about-Gyansabha\privacy-policy.html">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="center box">
+            <h2>Address</h2>
+            <div class="content">
+                <div class="place">
+                    <span class="text">Solapur, Maharashtra, India</span>
+                </div>
+                <div class="email">
+                    <span class="text">study@gyansabha.in</span>
+                </div>
+                <div class="social">
+                    <a href="https://facebook.com/thegyansabha"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/thegyansabha"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCWs80Sp0N4MKV9jDnWsJVfw"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        copyright &copy; GYANSABHA 2022. All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>

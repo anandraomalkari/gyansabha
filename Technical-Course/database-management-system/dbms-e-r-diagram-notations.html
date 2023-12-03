@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <title>DBMS E-R Diagram Notations | Gyansabha</title>
+    <meta name="title" content="DBMS E-R Diagram Notations | Gyansabha">
+    <meta name="description" content="The capacity to change the schema at one level of database system without having to change the schema at next higher level"/>
+    <meta name="keywords" content="E-R Diagram Notations, DBMS E-R Diagram Notations, primary key, candidate key, super key, database, DBMS, database Management System, DBMS BCA, database management system notes, database management system notes pdf, database management system notes for bca pdf, database management system notes class 10, database management system notes pdf download, database management system notes class 12, database management system notes class 11, database management system notes for bsc computer science, database management system notes for bca, database management system lecture notes, what is database and management system, database management system notes bca, database management system bca notes pdf, database management system bba notes, database management system bba notes pdfdatabase management system notes for b tech, relational database management system notes for bca, basic database management system notes pdf, database management system complete notes, gyansabha, gyansabha.in"/>
+    <meta name="author" content="gyansabha.in"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="IMG\icon.png" type="image/x-icon" />
+    <base href="https://gyansabha.in/">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919281978138727"
+     crossorigin="anonymous"></script>
+<style>
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: blue; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+}
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+::selection{
+    background: #4070f4;
+    color: #fff;
+}
+body{
+    background: linear-gradient(#f7fafc, #def3f762);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: relative;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #4070f4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+.logo img{
+    height: 60px;
+    font-size: 40px;
+    line-height: 60px;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav{
+    float: right;
+}
+.clearfix{
+    clear: both;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #262626;
+}
+nav ul li a.active,
+nav ul li a:hover{
+    color: #fff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+@media (max-width:1200px){
+    header{
+        margin: 10px;
+    }
+    header img{
+        width:250px;
+        height: 50px;
+    }
+}
+@media (max-width:768px){
+    .menu-toggle{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+    }
+    .menu-toggle:before{
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    nav{
+        display: none;
+    }
+    .menu-toggle.active:before{
+        content: '\f00d';
+    }
+    nav.active{
+        display: block;
+        width: 100%;
+    }
+    nav.active ul{
+        display: block;
+    }
+    nav.active ul li a{
+        margin: 0;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo"><img src="\IMG\Gyansabhalogo.png" alt=""></a>
+    <div class="menu-toggle"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html" title="Home" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+            <li><a href="about-Gyansabha\FAQ.html" title="FAQ"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ </a></li>
+            <li><a href="about-Gyansabha\about.html" title="About"><i class="fa fa-id-card-o" aria-hidden="true"></i> About Us </a></li>
+            <li><a href="about-Gyansabha\contactus.php" title="Contact Us"><i class="fa fa-commenting-o" aria-hidden="true"></i> Contact Us </a></li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+</header>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('.menu-toggle').click(function(){
+            $('.menu-toggle').toggleClass('active')
+            $('nav').toggleClass('active')
+        })
+    })
+</script>
+
+
+<style>
+.wrapper{
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.wrapper .menu-btn{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    background: #4a4a4a;
+    color: #fff;
+    height: 45px;
+    width: 45px;
+    z-index: 1;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#btn:checked ~ .menu-btn{
+    left: 175px;
+}
+.wrapper .menu-btn i{
+    padding: 10px;
+    position: absolute;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.wrapper .menu-btn i.fa-times{
+    opacity: 0;
+}
+#btn:checked ~ .menu-btn i.fa-times{
+    opacity: 1;
+    transform: rotate(-180deg);
+}
+#btn:checked ~ .menu-btn i.fa-bars{
+    opacity: 0;
+    transform: rotate(180deg);
+}
+#sidebar{
+    position: fixed;
+    background: #404040;
+    height: 60%;
+    width: 200px;
+    overflow: hidden;
+    left: -200px;
+    transition: all 0.3s ease;
+}
+#btn:checked ~ #sidebar{
+    left: 0;
+}
+#sidebar .title{
+    line-height: 65px;
+    text-align: center;
+    background: #333;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f2f2f2;
+    border-bottom: 1px solid #222;
+}
+#sidebar .list-items{
+    position: relative;
+    background: #404040;
+    height: 100%;
+	
+    list-style: none;
+}
+#sidebar .list-items li{
+    padding: 4px;
+    line-height: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #333;
+    transition: all 0.3s ease;
+}
+#sidebar .list-items li:first-child{
+    border-top: none;
+}
+#sidebar .list-items li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+#sidebar .list-items li a i{
+    margin-right: 20px;
+}
+@media (max-width:768px){
+    .wrapper{
+        width: 10%;
+    }
+}
+</style>
+<div class="wrapper">
+    <input type="checkbox" id="btn" hidden>
+    <label for="btn" class="menu-btn">
+      <i class="fa fa-bars"></i>
+      <i class="fa fa-times"></i>
+    </label>
+    <div id="sidebar">
+        <div class="title">Data Modeling</div>
+      <ol class="list-items">
+        <li><a href="Technical-Course/database-management-system/dbms-data-modeling.html">Data Modeling</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-logical-data-modeling.html">Logical Data Modeling</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-conceptual-data-modeling.html">Conceptual Data Modeling</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-relationship.html">Relationship</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-keys.html">Keys</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-e-r-diagram-notations.html">E R Diagram Notations</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-entity-relationship-participation.html">Entity Relationship Participation</a></li>
+        <li><a href="Technical-Course/database-management-system/dbms-enhanced-e-r-model.html">Enhanced E R Model</a></li>
+      </ol>
+    </div>
+</div>
+
+<style>
+.container{
+    letter-spacing: 1px;
+    position: relative;
+    width:1300px;
+    margin: 10px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    border: 2px solid #4070f4;
+}
+.container h3{
+    text-align: center;
+    border-bottom: 2px solid #4070f4;
+    font-weight: 900;
+    color: #4070f4;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.container h4{
+	font-size: 16px;
+}
+.container p{
+    font-size: 14px;
+}
+.container .imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .imgs img{
+    width: 600px;
+    height: 100%;
+    border: 2px solid #4070f4;
+}
+.container ol li, ul li{
+	line-height: 30px;
+}
+.next{
+    float: right;
+}
+.next a{
+    background: #4070f4;
+    color: #fff;
+    text-decoration: none;
+    min-width: 282px;
+    padding: 14px 16px;
+	font-size: 14px;
+}
+.chapter{
+    position: relative;
+    width: 1300px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+.chapter .list-topic{
+    position: relative;
+    width: 250px;
+    height: 160px;
+    background: #fff;
+    margin: 10px;
+    border-top: 5px solid #4070f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.chapter .list-topic .circle{
+    position: relative;
+    text-align: center;
+}
+.chapter .list-topic .circle p.subject-name{
+    padding: 10px;
+    color: #8b8b8b;
+    text-align: left;
+}
+.chapter .list-topic .contents{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 200px;
+}
+.chapter .list-topic .contents a{
+    background: #4070f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+@media (max-width:768px){
+    .container{
+        width: 100%;
+    }
+    .next a{
+		min-width: 200px;
+		font-size: 10px;
+	}
+}
+@media (max-width:768px){
+    .chapter{
+        width: 100%;
+    }
+}
+</style>
+
+<div class="container">
+	<h3>E-R Diagram Notations</h3>
+	<div class="imgs">
+		<img src="IMG/database-management-system-images/e-r-notations-1.png" alt="">
+	</div><hr>
+	<p>
+		Models of entity relationships (ER) are based on the real-world relationships between entities. ER models are normally represented by ER-diagrams.
+	</p>
+    <div class="next">
+        <a href="Technical-Course/database-management-system/dbms-keys.html"><i class="fa fa-arrow-left" aria-hidden="true"></i>Keys</a>
+        <a href="Technical-Course/database-management-system/dbms-entity-relationship-participation.html"> Entity Relationship Participation<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+</div>
+
+<br><br>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+footer{
+    position: absolute;
+    width: 100%;
+    background: #111;
+    color: #fff;
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+.box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+}
+.box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #4070f4;
+    top: -10px;
+}
+.left .content p{
+    text-align: justify;
+}
+.center .content .fas{
+    font-size: 2.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 35px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.center .content .fas:hover{
+    background: #4070f4;
+}
+.center .content .text{
+    font-size: 1.0625rem;
+    padding-left: 10px;
+}
+.center .content .email{
+    margin: 15px 0;
+}
+.center .content .social{
+    margin: 20px 0 0 0;
+} 
+.center .content .social a{
+    padding: 0 2px;
+}
+.center .content .social a i{
+    height: 40px;
+    width: 45px;
+    background: #1a1a1a;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.center .content .social a i:hover{
+    background: #4070f4;
+}
+.right{
+    height: 45px;
+    width: 25px;
+    line-height: 30px;
+}
+.right .content .projects span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .projects span a:hover{
+    color: #4070f4;
+}
+.right .content .code span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .code span a:hover{
+    color: #4070f4;
+}
+.right .content .blog span a{
+    text-decoration: none;
+    color: #fff;
+}
+.right .content .blog span a:hover{
+    color: #4070f4;
+}
+.righttwo{
+    height: 45px;
+    width: 25px;
+    line-height: 30px;
+}
+.righttwo .content .about span a{
+    text-decoration: none;
+    color: #fff;
+}
+.righttwo .content .about span a:hover{
+    color: #4070f4;
+}
+.righttwo .content .privcy span a{
+    text-decoration: none;
+    color: #fff;
+}
+.righttwo .content .privcy span a:hover{
+    color: #4070f4;
+}
+@media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+    .right{
+      width: 100%;
+    }
+    .righttwo{
+      width: 100%;
+    }
+}
+.footer-bottom{
+    padding: 10px;
+    background: #3d545f;
+    color: #fff;
+}
+</style>
+<footer>
+    <div class="main-content">
+        <div class="left box">
+            <h2>About us</h2>
+            <div class="content">
+                <p>Gyansabha is a place where students, Teachers and faculty members can get all the study related Things like Notes, Question Papers and Projects materials, etc. We believe that a good learner is a better explorer.</p>
+            </div>
+        </div>
+        <div class="right box">
+            <h2>Useful Links</h2>
+            <div class="content">
+                <div class="blog">
+                    <span><a href="Blog/Blog-index.html">Blog</a></span>
+                </div>
+                <div class="projects">
+                    <span><a href="Projects/Gyansabha-Projects.html">Projects</a></span>
+                </div>
+                <div class="code">
+                    <span><a href="Code/Code-index.html">Creative Code</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="righttwo box">
+            <h2>Website</h2>
+            <div class="content">
+                <div class="about">
+                    <span><a href="about-Gyansabha\about.html">About Us</a></span>
+                </div>
+                <div class="about">
+                    <span><a href="mailto:study@gyansabha.in"> Contact Us </a></span>
+                </div>
+                <div class="about">
+                    <span><a href="sitemap.xml">Sitemap</a></span>
+                </div>
+                <div class="privcy">
+                    <span><a href="about-Gyansabha\privacy-policy.html">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="center box">
+            <h2>Address</h2>
+            <div class="content">
+                <div class="place">
+                    <span class="text">Solapur, Maharashtra, India</span>
+                </div>
+                <div class="email">
+                    <span class="text">study@gyansabha.in</span>
+                </div>
+                <div class="social">
+                    <a href="https://facebook.com/thegyansabha"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/thegyansabha"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCWs80Sp0N4MKV9jDnWsJVfw"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        copyright &copy; GYANSABHA 2022. All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>

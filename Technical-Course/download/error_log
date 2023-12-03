@@ -1,0 +1,2 @@
+[12-May-2022 07:10:03 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'u758960365_notes'@'localhost' (using password: YES) in /home/u758960365/domains/gyansabha.in/public_html/Technical-Course/download/c-programming-notes-download.php on line 409
+[12-May-2022 07:11:46 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'u758960365_notes'@'localhost' (using password: YES) in /home/u758960365/domains/gyansabha.in/public_html/Technical-Course/download/c-programming-notes-download.php on line 409

@@ -1,0 +1,27 @@
+
+
+
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW IPALLOWID:tU3yeGDWee
+allow from 81.16.28.79
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE tU3yeGDWee:IPALLOWID
+
+
+
+
+php_value max_execution_time 60
+
+
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+</IfModule>
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.gyansabha.in
+RewriteRule (.*) https://gyansabha.in/$1 [R=301,L]
