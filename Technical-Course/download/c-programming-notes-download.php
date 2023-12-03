@@ -397,7 +397,7 @@ $(document).ready(function(){
 				</div>
 				<div class="col-lg-6">
 					<div class="text-container">
-					<form action="Technical-Course/download/c-programming-notes-download.php" method="POST">
+					<form action="/download/c-programming-notes-download.php" method="POST">
 					<?php
                         $username="";
 						$userEmail = "";//first we leave email field blank
